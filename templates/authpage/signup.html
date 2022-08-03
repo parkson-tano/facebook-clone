@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/static/img/favicon/android-chrome-512x512.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/font-awesome.min.css"> -->
+
+    <title>Facebook - Login or Signup</title>
+  </head>
+
+  <body>
+    <div class="container-fluid jumbotron">
+      <div class="row p-sm-5 m-md-3 justify-content-center py-5">
+        <div class="col col-md-6">
+            {% if error %}
+                  <div class="alert alert-danger" role="alert">
+                    <strong>{{error}}</strong>
+                </div>
+                {% endif %}
+          <form action="" method="POST">
+            {% csrf_token %}
+            <div class="card rounded-5" style="width: 100%">
+              <div class="card-title ml-3">
+                <span>
+                  <p>
+                    <span class="font-weight-bold h3">Sign Up</span> <br />
+                    It's quick and easy
+                  </p>
+                </span>
+              </div>
+              <hr />
+              <div class="card-body p-sm-2 mt-2">
+                <div class="row">
+                  <div class="col">
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        name="first_name"
+                        id=""
+                        class="form-control form-control-lg"
+                        placeholder="First name"
+                        aria-describedby="helpId"
+                      />
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        name="last_name"
+                        id=""
+                        class="form-control form-control-lg"
+                        placeholder="Last name"
+                        aria-describedby="helpId"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input
+                    type="email"
+                    name="email"
+                    id=""
+                    class="form-control form-control-lg"
+                    placeholder="Email"
+                  />
+                </div>
+                 <div class="form-group">
+                  <input
+                    type="text"
+                    name="username"
+                    id=""
+                    class="form-control form-control-lg"
+                    placeholder="username"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="password"
+                    name="password"
+                    id=""
+                    class="form-control form-control-lg"
+                    placeholder="New Password"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="date" class="text-muted h6 small">Birthday</label>
+                  <input
+                    type="date"
+                    name="birthday"
+                    id=""
+                    class="form-control form-control-lg"
+
+                  />
+                </div>
+                <div class="form-group px-3">
+                  <label for="date" class="text-muted h6 small">Gender</label>
+                  <br />
+                  <div class="row">
+                    <div class="col col-4 form-control">
+                      <div class="form-check form-check-inline">
+                        <div class="row">
+                          <div class="col-8">
+                            <label class="form-check-label" for="female"
+                              >Female</label
+                            >
+                          </div>
+                          <div class="col-4">
+                            <input
+                              class="form-check-input"
+                              type="radio"
+                              name="gender"
+                              id="female"
+                              value="female"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col col-4 form-control">
+                      <div
+                        class="form-check form-check-inline justify-content-end"
+                      >
+                        <div class="row">
+                          <div class="col-8">
+                            <label class="form-check-label" for="male"
+                              >Male</label
+                            >
+                          </div>
+                          <div class="col-4">
+                            <input
+                              class="form-check-input"
+                              type="radio"
+                              name="gender"
+                              id="male"
+                              value="male"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col col-4 form-control">
+                      <div class="form-check form-check-inline">
+                        <div class="row">
+                          <div class="col-8">
+                            <label class="form-check-label" for="custom"
+                              >Custom</label
+                            >
+                          </div>
+                          <div class="col-4">
+                            <input
+                              class="form-check-input"
+                              type="radio"
+                              name="gender"
+                              id="custom"
+                              value="custom"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <p class="text-muted small mx-2">
+                  People who use our service may have uploaded your contact
+                  information to Facebook. Learn more.
+                  <br />
+                </p>
+                <p class="text-muted small mx-2">
+                  By clicking Sign Up, you agree to our Terms, Privacy Policy
+                  and Cookies Policy. You may receive SMS Notifications from us
+                  and can opt out any time.
+                </p>
+                <div class="text-center">
+                  <button class="btn btn-success btn-lg my-3 font-weight-bold">
+                    Create new account
+                  </button>
+                </div>
+                <p class="text-center">
+                  <a href="{% url 'facebook:login' %}" class=""
+                    >Already have an account</a
+                  >
+                </p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
